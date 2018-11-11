@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Cadastro de Campeões</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong>Cadastro de Campeões </strong>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table
+					class="table table-sm table-striped table-hover table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nome</th>
+							<th>Tipo</th>
+							<th>Poder</th>
+							<th>Dificuldade</th>
+							<th>Local</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr th:each="Campeao : ${Campeao}">
+							<td th:text="${Campeao.id}"></td>
+							<td th:text="${Campeao.nome}"></td>
+							<td th:text="${Campeao.TipoCampeao.tipo_campeao}"></td>
+							<td th:text="${Campeao.poder}"></td>
+							<td th:text="${Campeao.dificuldade}"></td>
+							<td th:text="${Campeao.local}"></td>
+							<td>	
+								<div class="btn-group pull-right">
+									<a class="btn btn-sm btn-primary"
+										th:href="@{/alterarCampeao/{id}(id=${Campeao.id})}">Editar</a> <a
+										class="delete btn btn-sm btn-danger"
+										th:href="@{/excluirCampeao/{id}(id=${Campeao.id})}"
+										onclick="return confirm('Deseja realmente excluir esse registro?');">Excluir</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<a class="btn btn-sm btn-success" th:href="@{/IncluirCampeao/}">Adicionar</a>
+			<a class="btn btn-sm btn-success" th:href="@{/ListaTodos/}">Gerar PDF</a>
+			<a class="btn btn-sm btn-success" th:href="@{/showJSON/}">Mostrar
+				Formato JSON</a>
+		</div>
+	</div>
+</body>
+</html>

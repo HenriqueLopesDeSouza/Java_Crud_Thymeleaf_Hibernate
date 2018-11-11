@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Cadastro_Lol
+Implementation-Version: 1.0.0
+Built-By: henri
+Implementation-Vendor-Id: Cadastro_Lol
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Cadastro_Lol
+Created-By: Maven Integration for Eclipse
+
